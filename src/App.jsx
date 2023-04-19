@@ -35,7 +35,7 @@ function App() {
     // setLoading(true);
     const res = await fetch(URL);
     const data = await res.json();
-    setItems(data);
+    setItems(data.menu);
     // setLoading(false);
 
   }
@@ -48,21 +48,21 @@ function App() {
     const res = await fetch(URL);
     const data = await res.json();
     setItems(
-      data.filter((item) => item.category == "breakfast")
+      data.menu.filter((item) => item.category == "breakfast")
     )
   }
   const lunch = async () => {
     const res = await fetch(URL);
     const data = await res.json();
     setItems(
-      data.filter((item) => item.category == "lunch")
+      data.menu.filter((item) => item.category == "lunch")
     )
   }
   const shakes = async () => {
     const res = await fetch(URL);
     const data = await res.json();
     setItems(
-      data.filter((item) => item.category == "shakes")
+      data.menu.filter((item) => item.category == "shakes")
     )
   }
   return (

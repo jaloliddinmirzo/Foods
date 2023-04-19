@@ -1,7 +1,7 @@
 import React from 'react'
       
 
-export const Card = ({img,title,price,text}) => {
+export const Card = ({img,title,price,desc}) => {
   return (
     <article className="menu-item">
       <img
@@ -15,7 +15,7 @@ export const Card = ({img,title,price,text}) => {
           <h4 className="price">${price}</h4>
         </header>
         <p className="item-text">
-          {text}
+          {desc}
         </p>
       </div>
     </article>
