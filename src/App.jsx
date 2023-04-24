@@ -14,7 +14,7 @@ import photo9 from './images/item-9.jpeg'
 
 
 function App() {
-  const [items, setItems] = useState(JSON.parse(localStorage.getItem("items"))||[])
+  const [items, setItems] = useState(JSON.parse(localStorage.getItem("items")) || [])
   const foto = ["", photo, photo2, photo3, photo4, photo5, photo6, photo7, photo8, photo9]
 
 
@@ -25,18 +25,16 @@ function App() {
     const storedTodos = JSON.parse(localStorage.getItem("items"));
     if (storedTodos) {
       setItems(storedTodos);
-    }else getData()
+    } else getData()
   }, [])
 
 
 
 
   const getData = async () => {
-    // setLoading(true);
     const res = await fetch(URL);
     const data = await res.json();
     setItems(data.menu);
-    // setLoading(false);
 
   }
 
